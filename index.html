@@ -8,7 +8,7 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="홍민기 ♥ 서혜민 결혼합니다">
 <meta property="og:description" content="2027.02.13 토요일 오후 2시 50분 · 스타시티아트홀">
-<meta property="og:image" content="https://gpmmin0-alt.github.io/wedding/photos/main.jpg">
+<meta property="og:image" content="https://gpmmin0-alt.github.io/wedding/main.jpg">
 <meta property="og:url" content="https://gpmmin0-alt.github.io/wedding/">
 <meta name="theme-color" content="#f5f0e6">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,22 +37,27 @@
   .muted{color:var(--mute)}
   p{margin:0}
 
-  /* ---------- Top bar ---------- */
-  .topbar{position:sticky; top:0; z-index:5; display:flex; justify-content:space-between; align-items:center;
-    padding:14px 20px; background:linear-gradient(rgba(245,240,230,.95) 55%, rgba(245,240,230,0))}
-  .topbar .script{font-size:17px; color:var(--soft)}
-  .bgm{width:30px;height:30px;border:1px solid var(--line);border-radius:50%;background:none;color:var(--soft);
+  /* ---------- Cover (full screen) ---------- */
+  .hero{position:relative; height:100vh; height:100svh; min-height:560px; padding:0; overflow:hidden; color:#fbf8f2}
+  .hero-ph{position:absolute; inset:0; height:100%}
+  .hero-ph img{object-position:42% 55%}
+  .hero-shade{position:absolute; inset:0; z-index:4; pointer-events:none;
+    background:linear-gradient(rgba(30,24,18,.3) 0%, rgba(30,24,18,0) 16%, rgba(30,24,18,0) 48%, rgba(30,24,18,.38) 70%, rgba(30,24,18,.68) 100%)}
+  .topbar{position:absolute; top:0; left:0; right:0; z-index:6; display:flex; justify-content:space-between; align-items:center; padding:16px 20px}
+  .topbar .script{font-size:18px; color:#fbf8f2}
+  .bgm{width:30px;height:30px;border:1px solid rgba(251,248,242,.6);border-radius:50%;background:none;color:#fbf8f2;
     display:grid;place-items:center;cursor:pointer;font-size:11px;padding:0}
-
-  /* ---------- Cover ---------- */
-  .cover{padding:12px 28px 80px}
-  .frame{position:relative; width:78%; margin:18px auto 0; padding:14px}
-  .frame svg{position:absolute; inset:0; width:100%; height:100%; pointer-events:none; overflow:visible}
-  .frame .ph{aspect-ratio:3/4}
-  .cover .of{margin-top:46px; font-family:"Cormorant Garamond",serif; font-size:13px; letter-spacing:.3em; color:var(--soft)}
-  .cover h1{margin:6px 0 18px; font-size:clamp(28px,9vw,38px); white-space:nowrap; line-height:1.25; font-weight:400}
-  .cover h1 .amp{font-size:22px; color:var(--mute); margin:0 4px}
-  .cover .meta{font-size:13.5px; color:var(--soft); line-height:2}
+  .hero-text{position:absolute; left:0; right:0; bottom:64px; z-index:6; text-align:center; padding:0 20px;
+    text-shadow:0 1px 16px rgba(0,0,0,.35); animation:rise 1.6s ease both .2s}
+  .hero .of{font-family:"Cormorant Garamond",serif; font-size:12px; letter-spacing:.32em; opacity:.9}
+  .hero h1{margin:4px 0 12px; font-size:clamp(28px,9vw,38px); white-space:nowrap; line-height:1.25; font-weight:400}
+  .hero h1 .amp{font-size:22px; opacity:.8; margin:0 4px}
+  .hero .meta{font-size:13px; line-height:1.9; opacity:.92}
+  .scroll-cue{position:absolute; bottom:22px; left:50%; z-index:6; width:1px; height:26px; background:rgba(251,248,242,.7);
+    transform-origin:top; animation:cue 2s ease-in-out infinite}
+  @keyframes rise{from{opacity:0; transform:translateY(14px)}to{opacity:1; transform:none}}
+  @keyframes cue{0%{transform:scaleY(0)}50%{transform:scaleY(1)}100%{transform:scaleY(0); transform-origin:bottom}}
+  @media (prefers-reduced-motion:reduce){ .hero-text,.scroll-cue{animation:none} }
 
   /* ---------- Photo ---------- */
   .ph{position:relative; width:100%; background:rgba(214,204,188,.35); overflow:hidden}
@@ -142,29 +147,20 @@
 <body>
 <div class="wrap">
 
-  <header class="topbar">
-    <span class="script">We are getting married</span>
-    <button class="bgm" id="bgm" aria-label="배경음악" title="배경음악">▶</button>
-  </header>
-
-  <!-- 커버 -->
-  <section class="cover">
-    <div class="frame fade">
-      <!-- 직접 그린 장식 프레임 -->
-      <svg viewBox="0 0 100 133" preserveAspectRatio="none" aria-hidden="true">
-        <rect x="1.5" y="1.5" width="97" height="130" fill="none" stroke="#3d322a" stroke-opacity=".45" stroke-width=".35" vector-effect="non-scaling-stroke"/>
-        <rect x="4" y="4" width="92" height="125" fill="none" stroke="#3d322a" stroke-opacity=".25" stroke-width=".3" vector-effect="non-scaling-stroke"/>
-      </svg>
-      <svg viewBox="0 0 100 100" aria-hidden="true" style="inset:-8px;width:calc(100% + 16px);height:calc(100% + 16px)" preserveAspectRatio="none">
-        <g fill="none" stroke="#3d322a" stroke-opacity=".55" stroke-width="1" vector-effect="non-scaling-stroke">
-          <path d="M0 9 Q0 0 9 0"/><path d="M91 0 Q100 0 100 9"/><path d="M100 91 Q100 100 91 100"/><path d="M9 100 Q0 100 0 91"/>
-        </g>
-      </svg>
-      <div class="ph print" data-src="photos/main.jpg" data-label="대표 사진"></div>
+  <!-- 커버 (꽉 찬 화면) -->
+  <section class="hero">
+    <div class="ph print hero-ph" data-src="main.jpg" data-label="대표 사진"></div>
+    <div class="hero-shade"></div>
+    <header class="topbar">
+      <span class="script">We are getting married</span>
+      <button class="bgm" id="bgm" aria-label="배경음악" title="배경음악">▶</button>
+    </header>
+    <div class="hero-text">
+      <p class="of">THE WEDDING OF</p>
+      <h1 class="script">hong minki<span class="amp">&amp;</span>seo hyemin</h1>
+      <p class="meta">2027. 02. 13 토요일 오후 2시 50분<br>스타시티아트홀 5층</p>
     </div>
-    <p class="of fade">THE WEDDING OF</p>
-    <h1 class="script fade">hong minki<span class="amp">&amp;</span>seo hyemin</h1>
-    <p class="meta fade">2027. 02. 13 토요일 오후 2시 50분<br>스타시티아트홀 5층</p>
+    <div class="scroll-cue" aria-hidden="true"></div>
   </section>
 
   <!-- 혼주 & 인사말 -->
