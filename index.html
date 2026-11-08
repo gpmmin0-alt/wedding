@@ -10,28 +10,26 @@
 <meta property="og:description" content="2027.02.13 토요일 오후 2시 50분 · 스타시티아트홀">
 <meta property="og:image" content="https://gpmmin0-alt.github.io/wedding/photos/main.jpg">
 <meta property="og:url" content="https://gpmmin0-alt.github.io/wedding/">
-<meta name="theme-color" content="#3a2a22">
+<meta name="theme-color" content="#f5f0e6">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#3a2a22; --bg2:#33251e; --ink:#efe6d8; --soft:#cbbba6; --mute:#9c8a76;
-    --line:rgba(239,230,216,.22); --card:rgba(255,255,255,.04);
+    --bg:#f5f0e6; --ink:#3d322a; --soft:#6f6256; --mute:#a3957f;
+    --line:rgba(61,50,42,.18); --card:rgba(255,255,255,.35);
   }
   *{box-sizing:border-box}
   html{-webkit-text-size-adjust:100%}
   body{
-    margin:0; color:var(--ink); background:#241a15;
+    margin:0; color:var(--ink); background:#e6dfd2;
     font-family:"Gowun Batang",serif; line-height:1.9; letter-spacing:-.01em;
   }
   .wrap{
     max-width:440px; margin:0 auto; overflow:hidden; background-color:var(--bg);
     /* 은은한 린넨 질감 */
-    background-image:
-      repeating-linear-gradient(0deg, rgba(255,255,255,.018) 0 1px, transparent 1px 3px),
-      repeating-linear-gradient(90deg, rgba(0,0,0,.05) 0 1px, transparent 1px 3px);
-    box-shadow:0 0 60px rgba(0,0,0,.4);
+    background-image:url(fabric.jpg); background-size:100% auto; background-repeat:repeat-y;
+    box-shadow:0 0 50px rgba(60,45,30,.12);
   }
   section{padding:88px 28px; text-align:center}
   .script{font-family:"Pinyon Script",cursive; font-weight:400}
@@ -41,7 +39,7 @@
 
   /* ---------- Top bar ---------- */
   .topbar{position:sticky; top:0; z-index:5; display:flex; justify-content:space-between; align-items:center;
-    padding:14px 20px; background:linear-gradient(var(--bg) 60%, transparent)}
+    padding:14px 20px; background:linear-gradient(rgba(245,240,230,.95) 55%, rgba(245,240,230,0))}
   .topbar .script{font-size:17px; color:var(--soft)}
   .bgm{width:30px;height:30px;border:1px solid var(--line);border-radius:50%;background:none;color:var(--soft);
     display:grid;place-items:center;cursor:pointer;font-size:11px;padding:0}
@@ -57,18 +55,24 @@
   .cover .meta{font-size:13.5px; color:var(--soft); line-height:2}
 
   /* ---------- Photo ---------- */
-  .ph{position:relative; width:100%; background:#2c201a; overflow:hidden}
+  .ph{position:relative; width:100%; background:rgba(214,204,188,.35); overflow:hidden}
+  /* 천에 인쇄한 듯한 사진 */
+  .print{background:#efe8dc url(fabric-sq.jpg) center/360px; isolation:isolate}
+  .print img{mix-blend-mode:multiply; filter:sepia(.1) saturate(.85) contrast(.96) brightness(1.03)}
+  .print::before{content:""; position:absolute; inset:0; z-index:2; pointer-events:none;
+    background:url(fabric-sq.jpg) center/360px; mix-blend-mode:overlay; opacity:.42}
+  .print::after{z-index:3}
   .ph img{display:block; width:100%; height:100%; object-fit:cover}
   .ph.empty{display:grid; place-items:center; border:1px dashed var(--line)}
   .ph.empty::after{content:attr(data-label); font-size:12px; color:var(--mute); letter-spacing:.05em}
-  .wide{aspect-ratio:4/5}
+  .wide{aspect-ratio:3/4}
 
   /* ---------- Greeting ---------- */
   .join{font-size:34px; line-height:1.35; color:var(--ink)}
   .parents{margin-top:56px; font-size:15px; line-height:2.3}
   .parents small{font-size:11px; color:var(--mute); margin:0 6px}
   .parents b{font-weight:700}
-  .msg{margin-top:28px; font-size:14.5px; line-height:2.2; color:#e3d8c7}
+  .msg{margin-top:28px; font-size:14.5px; line-height:2.2; color:var(--ink)}
   .msg + .msg{margin-top:22px}
   .rule{width:1px; height:46px; margin:0 auto 28px; background:var(--line)}
 
@@ -79,7 +83,7 @@
   .cal table{width:100%; border-collapse:collapse; font-family:"Cormorant Garamond",serif; font-size:15px}
   .cal th{font-weight:500; font-size:12px; color:var(--mute); padding-bottom:8px}
   .cal td{height:36px; color:var(--soft)}
-  .cal td.sun, .cal th.sun{color:#c98f7f}
+  .cal td.sun, .cal th.sun{color:#b0705f}
   .cal td.day span{display:inline-grid; place-items:center; width:32px; height:32px; border-radius:50%;
     background:var(--ink); color:var(--bg); font-weight:500}
   .dday{margin-top:26px; font-size:14px; color:var(--soft)}
@@ -92,10 +96,10 @@
   /* ---------- Gallery ---------- */
   .grid{display:grid; grid-template-columns:repeat(3,1fr); gap:4px; margin-top:30px}
   .grid .ph{aspect-ratio:1; cursor:pointer}
-  .lightbox{position:fixed; inset:0; z-index:20; background:rgba(15,10,8,.94); display:none; align-items:center; justify-content:center}
+  .lightbox{position:fixed; inset:0; z-index:20; background:rgba(40,32,26,.94); display:none; align-items:center; justify-content:center}
   .lightbox.on{display:flex}
   .lightbox img{max-width:100%; max-height:84vh}
-  .lightbox button{position:absolute; background:none; border:0; color:var(--ink); font-size:28px; padding:16px; cursor:pointer}
+  .lightbox button{position:absolute; background:none; border:0; color:#f5f0e6; font-size:28px; padding:16px; cursor:pointer}
   .lb-close{top:8px; right:8px} .lb-prev{left:0; top:50%; transform:translateY(-50%)} .lb-next{right:0; top:50%; transform:translateY(-50%)}
 
   /* ---------- Location ---------- */
@@ -105,8 +109,8 @@
   .maps{display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:26px}
   .btn{display:block; padding:12px 0; border:1px solid var(--line); background:var(--card); color:var(--ink);
     font:inherit; font-size:13px; text-decoration:none; cursor:pointer; border-radius:2px}
-  .btn:active{background:rgba(255,255,255,.1)}
-  .info{text-align:left; margin-top:38px; font-size:13.5px; line-height:1.95; color:#e3d8c7}
+  .btn:active{background:rgba(255,255,255,.6)}
+  .info{text-align:left; margin-top:38px; font-size:13.5px; line-height:1.95; color:var(--ink)}
   .info h3{margin:0 0 6px; font-size:13px; font-weight:700; color:var(--soft)}
   .info div + div{margin-top:22px; padding-top:22px; border-top:1px solid var(--line)}
   .info .q{color:var(--mute); font-size:12.5px}
@@ -148,15 +152,15 @@
     <div class="frame fade">
       <!-- 직접 그린 장식 프레임 -->
       <svg viewBox="0 0 100 133" preserveAspectRatio="none" aria-hidden="true">
-        <rect x="1.5" y="1.5" width="97" height="130" fill="none" stroke="#efe6d8" stroke-opacity=".55" stroke-width=".35" vector-effect="non-scaling-stroke"/>
-        <rect x="4" y="4" width="92" height="125" fill="none" stroke="#efe6d8" stroke-opacity=".3" stroke-width=".3" vector-effect="non-scaling-stroke"/>
+        <rect x="1.5" y="1.5" width="97" height="130" fill="none" stroke="#3d322a" stroke-opacity=".45" stroke-width=".35" vector-effect="non-scaling-stroke"/>
+        <rect x="4" y="4" width="92" height="125" fill="none" stroke="#3d322a" stroke-opacity=".25" stroke-width=".3" vector-effect="non-scaling-stroke"/>
       </svg>
       <svg viewBox="0 0 100 100" aria-hidden="true" style="inset:-8px;width:calc(100% + 16px);height:calc(100% + 16px)" preserveAspectRatio="none">
-        <g fill="none" stroke="#efe6d8" stroke-opacity=".7" stroke-width="1" vector-effect="non-scaling-stroke">
+        <g fill="none" stroke="#3d322a" stroke-opacity=".55" stroke-width="1" vector-effect="non-scaling-stroke">
           <path d="M0 9 Q0 0 9 0"/><path d="M91 0 Q100 0 100 9"/><path d="M100 91 Q100 100 91 100"/><path d="M9 100 Q0 100 0 91"/>
         </g>
       </svg>
-      <div class="ph" data-src="photos/main.jpg" data-label="대표 사진"></div>
+      <div class="ph print" data-src="photos/main.jpg" data-label="대표 사진"></div>
     </div>
     <p class="of fade">THE WEDDING OF</p>
     <h1 class="script fade">hong minki<span class="amp">&amp;</span>seo hyemin</h1>
@@ -179,7 +183,7 @@
     <p class="msg fade">2월의 좋은 날,<br>귀한 걸음으로 축복해 주시면 감사하겠습니다.</p>
   </section>
 
-  <div class="ph wide fade" data-src="photos/middle.jpg" data-label="중간 사진"></div>
+  <div class="ph print wide fade" data-src="photos/middle.jpg" data-label="중간 사진"></div>
 
   <!-- 날짜 -->
   <section>
@@ -272,7 +276,7 @@ const toast = t => { const el=document.getElementById('toast'); el.textContent=t
 
 // 사진: 파일이 있으면 표시, 없으면 자리 표시
 function loadPh(el){
-  const img=new Image(); img.alt=el.dataset.label||''; img.loading='lazy';
+  const img=new Image(); img.alt=el.dataset.label||'';
   img.onload=()=>{ el.classList.remove('empty'); el.innerHTML=''; el.appendChild(img); el.dataset.ok='1'; };
   img.onerror=()=>el.classList.add('empty');
   el.classList.add('empty'); img.src=el.dataset.src;
