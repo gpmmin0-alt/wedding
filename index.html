@@ -28,7 +28,7 @@
   .wrap{
     max-width:440px; margin:0 auto; overflow:hidden; background-color:var(--bg);
     /* 은은한 린넨 질감 */
-    background-image:url(fabric.jpg); background-size:100% auto; background-repeat:repeat-y;
+    background-image:linear-gradient(rgba(246,241,231,.62),rgba(246,241,231,.62)),url(fabric.jpg); background-size:auto,100% auto; background-repeat:no-repeat,repeat-y;
     box-shadow:0 0 50px rgba(60,45,30,.12);
   }
   section{padding:88px 28px; text-align:center}
@@ -57,10 +57,10 @@
   /* ---------- Photo ---------- */
   .ph{position:relative; width:100%; background:rgba(214,204,188,.35); overflow:hidden}
   /* 천에 인쇄한 듯한 사진 */
-  .print{background:#efe8dc url(fabric-sq.jpg) center/360px; isolation:isolate}
+  .print{background:linear-gradient(rgba(244,238,227,.65),rgba(244,238,227,.65)),url(fabric-sq.jpg) center/360px; background-color:#efe8dc; isolation:isolate}
   .print img{mix-blend-mode:multiply; filter:sepia(.1) saturate(.85) contrast(.96) brightness(1.03)}
   .print::before{content:""; position:absolute; inset:0; z-index:2; pointer-events:none;
-    background:url(fabric-sq.jpg) center/360px; mix-blend-mode:overlay; opacity:.42}
+    background:url(fabric-sq.jpg) center/360px; mix-blend-mode:overlay; opacity:.16}
   .print::after{z-index:3}
   .ph img{display:block; width:100%; height:100%; object-fit:cover}
   .ph.empty{display:grid; place-items:center; border:1px dashed var(--line)}
