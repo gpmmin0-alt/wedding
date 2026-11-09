@@ -85,7 +85,8 @@
   .date-big{font-family:"Cormorant Garamond",serif; font-size:30px; letter-spacing:.08em; margin-top:18px}
   .date-sub{font-size:14px; color:var(--soft)}
   .cal{margin:30px auto 0; max-width:300px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:18px 0}
-  .cal table{width:100%; border-collapse:collapse; font-family:"Cormorant Garamond",serif; font-size:15px}
+  .cal table{width:100%; border-collapse:collapse; table-layout:fixed; font-family:"Cormorant Garamond",serif; font-size:15px}
+  .cal th, .cal td{width:14.2857%; padding:0; text-align:center}
   .cal th{font-weight:500; font-size:12px; color:var(--mute); padding-bottom:8px}
   .cal td{height:36px; color:var(--soft)}
   .cal td.sun, .cal th.sun{color:#b0705f}
@@ -306,7 +307,7 @@
 
 <script>
 /* ===== 여기만 고치면 돼요 ===== */
-const GALLERY = ["photos/g1.jpg","photos/g2.jpg","photos/g3.jpg","photos/g4.jpg","photos/g5.jpg","photos/g6.jpg","photos/g7.jpg","photos/g8.jpg","photos/g9.jpg"];
+const GALLERY = Array.from({length:18},(_,i)=>"g"+String(i+1).padStart(2,"0")+".jpg");
 const ACCOUNTS = {
   "신랑측 계좌번호": [
     // { who:"신랑 홍민기", bank:"OO은행", num:"000-0000-0000" },
@@ -324,7 +325,7 @@ const toast = t => { const el=document.getElementById('toast'); el.textContent=t
 function loadPh(el){
   const img=new Image(); img.alt=el.dataset.label||'';
   img.onload=()=>{ el.classList.remove('empty'); el.innerHTML=''; el.appendChild(img); el.dataset.ok='1'; };
-  img.onerror=()=>el.classList.add('empty');
+  img.onerror=()=>{ if(!el.dataset.retry && !el.dataset.src.includes('/')){ el.dataset.retry=1; el.dataset.src='gallery/'+el.dataset.src; img.src=el.dataset.src; } else el.classList.add('empty'); };
   el.classList.add('empty'); img.src=el.dataset.src;
 }
 const grid=document.getElementById('grid');
