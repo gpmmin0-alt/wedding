@@ -37,8 +37,8 @@
   .body{margin-top:34px; font-size:14px; line-height:2.15; color:var(--soft)}
 
   /* 레이스 포인트 */
-  .lace{height:38px; margin:0 -30px; background:url(lace.webp) repeat-x center/auto 38px; opacity:.85;
-    -webkit-mask-image:linear-gradient(90deg,transparent,#000 18%,#000 82%,transparent); mask-image:linear-gradient(90deg,transparent,#000 18%,#000 82%,transparent)}
+  .lace{aspect-ratio:1400/209; margin:0 -30px; background:url(lace-band.webp) no-repeat center/100% 100%;
+    filter:drop-shadow(0 1px 1.5px rgba(0,0,0,.12))}
   .lace.full{margin:0; -webkit-mask-image:none; mask-image:none}
   .orn{display:flex; align-items:center; justify-content:center; gap:12px; margin:0 auto 26px; color:var(--lace)}
   .orn i{width:34px; height:1px; background:currentColor}
@@ -158,9 +158,13 @@
   .acc summary::-webkit-details-marker{display:none}
   .acc summary::after{content:"+"; font-family:"Bodoni Moda",serif; color:var(--mute)}
   .acc details[open] summary::after{content:"−"}
-  .acc .row{display:flex; justify-content:space-between; align-items:center; gap:10px; padding:10px 4px 18px; font-size:13px}
+  .acc .row{display:flex; justify-content:space-between; align-items:center; gap:10px; padding:14px 4px; font-size:13px}
+  .acc details[open]{padding-bottom:6px}
   .acc .who{color:var(--mute); font-size:11.5px}
-  .acc .copy{min-width:0; padding:8px 14px; font-size:9.5px}
+  .acc .who b{color:var(--ink); font-weight:700; margin-left:4px}
+  .acc .num{margin-top:2px; font-size:13px; color:var(--soft); letter-spacing:.01em}
+  .acc .row + .row{border-top:1px dashed var(--line)}
+  .acc .copy{flex:none; min-width:0; padding:8px 14px; font-family:"Gowun Batang",serif; font-size:11px; letter-spacing:0}
 
   /* ---------- CLOSING ---------- */
   .closing{padding-top:0}
@@ -172,6 +176,7 @@
   .share .btn{min-width:0; padding:13px 0}
   footer{padding:0 0 46px; text-align:center}
   footer .lace{margin:0 0 26px}
+  .gallery .lace{margin:0 -14px}
   footer p{font-family:"Bodoni Moda",serif; font-size:9.5px; letter-spacing:.21em; color:var(--mute)}
 
   .toast{position:fixed; left:50%; bottom:40px; transform:translateX(-50%) translateY(20px); opacity:0; transition:.3s;
@@ -182,63 +187,32 @@
   .fade.in{opacity:1; transform:none}
   @media (prefers-reduced-motion:reduce){ .fade{opacity:1; transform:none; transition:none} .hero-text,.cue{animation:none} }
 
-  /* ---------- Lace envelope intro ---------- */
+  /* ---------- Video intro ---------- */
   body.locked{overflow:hidden; height:100%}
-  #intro{position:fixed; inset:0; z-index:50; overflow:hidden; cursor:pointer; color:var(--ink);
-    background-color:var(--bg); background-image:linear-gradient(rgba(236,231,222,.9),rgba(236,231,222,.9)),url(fabric.jpg); background-size:auto,440px auto;
-    transition:opacity .9s ease, visibility .9s; -webkit-tap-highlight-color:transparent}
+  #intro{position:fixed; inset:0; z-index:50; overflow:hidden; cursor:pointer; background:#8c8378;
+    transition:opacity 1s ease, visibility 1s; -webkit-tap-highlight-color:transparent}
   #intro.done{opacity:0; visibility:hidden}
-  #intro .lace{position:absolute; left:0; right:0; margin:0; -webkit-mask-image:none; mask-image:none; transition:opacity .5s}
-  #intro .lace.t{top:0; transform:scaleY(-1)}
-  #intro .lace.b{bottom:0}
-  .stage{position:absolute; left:50%; top:53%; width:min(74vw,330px); transform:translate(-50%,-50%)}
-  .stage-z{transition:transform 1.25s cubic-bezier(.55,0,.25,1)}
-  .env{position:relative; width:100%; aspect-ratio:554/496; perspective:1100px; opacity:0; transform:translateY(10px) scale(.97);
-    transition:opacity 1.1s ease, transform 1.1s ease; filter:drop-shadow(0 14px 24px rgba(80,66,48,.22)) drop-shadow(0 2px 4px rgba(80,66,48,.12))}
-  #intro.ready .env{opacity:1; transform:none}
-  .env img, .env .card{position:absolute; display:block; -webkit-user-drag:none; user-select:none}
-  .env .back{inset:0; width:100%; height:100%; z-index:1}
-  .env .front{inset:0; width:100%; height:100%; z-index:3; pointer-events:none}
-  .env .closed{inset:0; width:100%; height:100%; z-index:3; pointer-events:none; transition:opacity .7s ease .15s}
-  #intro.s1 .closed{opacity:0}
-  .env .flap{left:0; bottom:100%; width:100%; height:51.2%; z-index:4; transform-origin:50% 100%;
-    transform:rotateX(180deg); transition:transform 1s cubic-bezier(.45,.05,.3,1), z-index 0s .5s}
-  .env .card{left:13.4%; width:73.6%; top:.6%; height:63%; z-index:2; background:#f2eee6;
-    box-shadow:0 0 0 .5px rgba(120,105,85,.18), 0 -2px 10px rgba(0,0,0,.06);
-    display:flex; flex-direction:column; align-items:center; justify-content:flex-start; padding-top:15%;
-    opacity:0; transition:transform 1.1s cubic-bezier(.2,.7,.25,1), opacity .35s ease .35s}
-  .card .nm{font-family:"Bodoni Moda",serif; font-size:clamp(10px,3.2vw,13px); letter-spacing:.24em; padding-left:.24em; color:#2a2a2a; white-space:nowrap; transition:opacity .5s}
-  .card .dt{margin-top:6px; font-family:"Bodoni Moda",serif; font-size:8px; letter-spacing:.2em; color:#8c8c8c; transition:opacity .5s}
-  .intro-top{position:absolute; top:15%; left:0; right:0; text-align:center; transition:opacity .5s}
-  .intro-top .lbl{color:var(--mute)}
+  #intro video{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transform-origin:50% 48%;
+    transition:transform 1.6s cubic-bezier(.55,0,.3,1), filter 1.6s ease}
+  #intro.zoom video{transform:scale(3.2); filter:blur(14px) brightness(1.25)}
+  #intro .veil{position:absolute; inset:0; background:var(--bg); opacity:0; pointer-events:none; transition:opacity 1.2s ease .5s}
+  #intro.zoom .veil{opacity:1}
+  .intro-top{position:absolute; top:11%; left:0; right:0; text-align:center; color:#f6f2ea; text-shadow:0 1px 10px rgba(40,32,24,.35); transition:opacity .6s}
+  .intro-top .lbl{opacity:.85}
   .intro-top .ttl{margin-top:10px; font-size:22px}
-  .intro-hint{position:absolute; left:0; right:0; bottom:13%; text-align:center; font-family:"Bodoni Moda",serif;
-    font-size:9.5px; letter-spacing:.22em; color:var(--mute); animation:blink 2.4s ease-in-out infinite; transition:opacity .4s}
-  @keyframes blink{50%{opacity:.3}}
-  #intro.s1 .flap{transform:rotateX(0deg); z-index:0}
-  #intro.s1 .card{opacity:1}
-  #intro.s1 .intro-hint, #intro.s1 .intro-top, #intro.s1 .lace{animation:none; opacity:0}
-  #intro.s2 .card{transform:translateY(-56%)}
-  #intro.zoom .env{filter:none}
-  #intro.zoom .card .nm, #intro.zoom .card .dt{opacity:0}
-  @media (prefers-reduced-motion:reduce){ .env,.flap,.card,.stage-z{transition:none!important} .intro-hint{animation:none} }
+  .intro-hint{position:absolute; left:0; right:0; bottom:11%; text-align:center; font-family:"Bodoni Moda",serif;
+    font-size:10px; letter-spacing:.22em; color:#f6f2ea; text-shadow:0 1px 8px rgba(40,32,24,.4); animation:blink 2.4s ease-in-out infinite; transition:opacity .4s}
+  @keyframes blink{50%{opacity:.35}}
+  #intro.play .intro-top, #intro.play .intro-hint{animation:none; opacity:0}
+  @media (prefers-reduced-motion:reduce){ #intro video,#intro .veil{transition:none!important} .intro-hint{animation:none} }
 </style>
 </head>
 <body class="locked">
 <div id="intro" role="button" tabindex="0" aria-label="청첩장 열기">
-  <div class="lace t"></div>
+  <video id="introVid" src="intro.mp4" poster="intro-poster.jpg" muted playsinline webkit-playsinline preload="auto"></video>
   <div class="intro-top"><p class="lbl">You are invited</p><p class="ttl">The Wedding</p></div>
-  <div class="stage"><div class="stage-z">
-    <div class="env">
-      <img class="back" src="back.webp" alt="">
-      <div class="card"><span class="nm">MINKI &amp; HYEMIN</span><span class="dt">2027 . 02 . 13</span></div>
-      <img class="front" src="front.webp" alt="">
-      <img class="closed" src="closed.webp" alt="">
-      <img class="flap" src="flap.webp" alt="">
-    </div>
-  </div></div>
   <p class="intro-hint">TOUCH TO OPEN</p>
-  <div class="lace b"></div>
+  <div class="veil"></div>
 </div>
 
 <div class="wrap">
@@ -289,7 +263,7 @@
   </section>
 
   <section class="gallery">
-    <div class="lace fade" style="margin:0 -14px"></div>
+    <div class="lace fade"></div>
     <h2 class="ttl fade" style="margin-top:56px">Gallery</h2>
     <p class="sub fade">우리의 순간들</p>
     <div class="grid fade" id="grid"></div>
@@ -349,10 +323,14 @@
 const GALLERY = [3,4,1,2,11,13,8,9,5,7,6,10,12,14,15,16,17,18].map(n=>"g"+String(n).padStart(2,"0")+".jpg");
 const ACCOUNTS = {
   "신랑측 계좌번호": [
-    // { who:"신랑 홍민기", bank:"OO은행", num:"000-0000-0000" },
+    { who:"신랑", name:"홍민기", bank:"카카오뱅크", num:"3333326121761" },
+    { who:"신랑 아버지", name:"홍광운", bank:"농협", num:"56012000920" },
+    { who:"신랑 어머니", name:"신보경", bank:"우리은행", num:"1002036296007" },
   ],
   "신부측 계좌번호": [
-    // { who:"신부 서혜민", bank:"OO은행", num:"000-0000-0000" },
+    { who:"신부", name:"서혜민", bank:"카카오뱅크", num:"3333050287102" },
+    { who:"신부 아버지", name:"서수진", bank:"기업은행", num:"40004429301028" },
+    { who:"신부 어머니", name:"전정애", bank:"농협", num:"74101952002015" },
   ]
 };
 const WEDDING = new Date("2027-02-13T14:50:00+09:00");
@@ -415,7 +393,7 @@ tick(); setInterval(tick,1000);
   for(const [title,list] of Object.entries(ACCOUNTS)){
     if(!list.length) continue; any=true;
     const det=document.createElement('details');
-    det.innerHTML=`<summary>${title}</summary>`+list.map(a=>`<div class="row"><div><div class="who">${a.who}</div>${a.bank} ${a.num}</div><button class="btn copy" data-v="${a.bank} ${a.num}">Copy</button></div>`).join('');
+    det.innerHTML=`<summary>${title}</summary>`+list.map(a=>`<div class="row"><div><div class="who">${a.who} <b>${a.name}</b></div><div class="num">${a.bank} ${a.num}</div></div><button class="btn copy" data-v="${a.bank} ${a.num} ${a.name}">복사</button></div>`).join('');
     box.appendChild(det);
   }
   if(!any) document.getElementById('accSection').style.display='none';
@@ -438,32 +416,29 @@ const audio=document.getElementById('audio'), bgm=document.getElementById('bgm')
 bgm.onclick=()=>{ if(audio.paused){ audio.play().then(()=>bgm.textContent='❚❚').catch(()=>toast('배경음악을 불러오지 못했어요')); } else { audio.pause(); bgm.textContent='▶'; } };
 
 (function(){
-  const intro=document.getElementById('intro'), card=intro.querySelector('.card'), z=intro.querySelector('.stage-z');
+  const intro=document.getElementById('intro'), vid=document.getElementById('introVid');
   const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let started=false, autoT;
+  let started=false, finished=false, autoT;
   const playMusic=()=>{ if(audio.paused) audio.play().then(()=>bgm.textContent='❚❚').catch(()=>{}); };
-  const wait=ms=>new Promise(r=>setTimeout(r,reduce?Math.min(ms,150):ms));
-  async function run(){
-    if(started) return; started=true; clearTimeout(autoT);
-    intro.classList.add('s1'); await wait(950);
-    intro.classList.add('s2'); await wait(1250);
-    const r=card.getBoundingClientRect(), zr=z.getBoundingClientRect(), vw=innerWidth, vh=innerHeight;
-    const cx=r.left+r.width/2, cy=r.top+r.height/2, S=Math.max(vw/r.width, vh/r.height)*1.12;
-    z.style.transformOrigin=(cx-zr.left)+'px '+(cy-zr.top)+'px';
-    z.style.transform='translate('+(vw/2-cx)+'px,'+(vh/2-cy)+'px) scale('+S+')';
-    intro.classList.add('zoom'); await wait(1150);
+  const wait=ms=>new Promise(r=>setTimeout(r,ms));
+  async function finish(){
+    if(finished) return; finished=true;
+    intro.classList.add('zoom'); await wait(reduce?200:1500);
     intro.classList.add('done'); document.body.classList.remove('locked'); document.body.classList.add('ready');
-    await wait(950); intro.remove();
+    await wait(1000); intro.remove();
+  }
+  function run(){
+    if(started) return; started=true; clearTimeout(autoT);
+    intro.classList.add('play');
+    vid.addEventListener('ended',finish,{once:true});
+    const p=vid.play(); if(p&&p.catch) p.catch(()=>finish());
+    setTimeout(finish,(vid.duration&&isFinite(vid.duration)?vid.duration*1000:4200)+1500);  // 안전장치
   }
   intro.addEventListener('click',()=>{ playMusic(); run(); });
   intro.addEventListener('keydown',e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); playMusic(); run(); } });
   document.addEventListener('pointerdown',function once(e){ if(e.target.closest('#bgm')) return; playMusic(); document.removeEventListener('pointerdown',once); },{capture:true});
   window.scrollTo(0,0);
-  const imgs=[...intro.querySelectorAll('img')];
-  Promise.all(imgs.map(i=>i.complete?1:new Promise(r=>{i.onload=i.onerror=r;}))).then(()=>{
-    requestAnimationFrame(()=>intro.classList.add('ready'));
-    autoT=setTimeout(run, 2200);
-  });
+  autoT=setTimeout(run, 3000);   // 가만히 있어도 자동으로 열림
 })();
 
 const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }),{threshold:.15});
