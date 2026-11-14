@@ -123,11 +123,11 @@
 
   /* ---------- GALLERY ---------- */
   .gallery{padding-left:14px; padding-right:14px}
-  .grid{display:flex; gap:4px; margin-top:42px; align-items:flex-start}
-  .grid .col{flex:1; display:flex; flex-direction:column; gap:4px; min-width:0}
+  .grid{display:grid; grid-template-columns:1fr 1fr; gap:4px; margin-top:42px}
+  .grid .ph{aspect-ratio:3/4; overflow:hidden}
+  .grid .ph.wide{grid-column:1/-1; aspect-ratio:4/3}
+  .grid .ph img{width:100%; height:100%; object-fit:cover}
   .grid .ph{cursor:pointer}
-  .grid .ph.empty{aspect-ratio:3/4}
-  .grid .ph img{height:auto}
   .grid .ph.hide{display:none}
   .more{margin-top:26px}
   .btn{display:inline-block; min-width:170px; padding:13px 24px; border:1px solid var(--ink); background:var(--ink); color:var(--bg);
@@ -322,7 +322,8 @@
 
 <script>
 /* ===== 여기만 고치면 돼요 ===== */
-const GALLERY = [3,4,1,2,11,13,8,9,5,7,6,10,12,14,15,16,17,18].map(n=>"g"+String(n).padStart(2,"0")+".jpg");
+const GALLERY = ["g12.jpg","g11.jpg","g01.jpg","g02.jpg","g03.jpg","g04.jpg","g05.jpg","photos/middle.jpg","g09.jpg","g08.jpg","g18.jpg","g10.jpg","g15.jpg","g19.jpg","g16.jpg","g17.jpg","g07.jpg","g13.jpg","g14.jpg","g06.jpg"];
+const WIDE = ["g14.jpg","g06.jpg"];
 const ACCOUNTS = {
   "신랑측 계좌번호": [
     { who:"신랑", name:"홍민기", bank:"카카오뱅크", num:"3333326121761" },
@@ -351,8 +352,8 @@ function loadPh(el){
   img.onerror=()=>{ if(!el.dataset.retry && !el.dataset.src.includes('/')){ el.dataset.retry=1; el.dataset.src='gallery/'+el.dataset.src; img.src=el.dataset.src; } else el.classList.add('empty'); };
   el.classList.add('empty'); img.src=el.dataset.src;
 }
-const grid=document.getElementById('grid'), SHOW=8, cols=[0,1].map(()=>{const c=document.createElement('div');c.className='col';grid.appendChild(c);return c;});
-const items=GALLERY.map((src,i)=>{ const d=document.createElement('div'); d.className='ph'+(i>=SHOW?' hide':''); d.dataset.src=src; d.dataset.label=String(i+1).padStart(2,'0'); cols[i%2].appendChild(d); return d; });
+const grid=document.getElementById('grid'), SHOW=8;
+const items=GALLERY.map((src,i)=>{ const d=document.createElement('div'); d.className='ph'+(WIDE.includes(src)?' wide':'')+(i>=SHOW?' hide':''); d.dataset.src=src; d.dataset.label=String(i+1).padStart(2,'0'); grid.appendChild(d); return d; });
 document.querySelectorAll('.ph[data-src]').forEach(loadPh);
 const moreBtn=document.getElementById('moreBtn');
 if(GALLERY.length<=SHOW) moreBtn.parentNode.remove();
