@@ -99,6 +99,8 @@
   .feature .frame{position:relative; padding:16px}
   .feature .frame .ph{z-index:3}
   .feature .frame .lf{position:absolute; height:30px; background:url(lace-ivory.webp) repeat-x center/auto 100%; pointer-events:none; z-index:1}
+  .feature .frame .lf.t,.feature .frame .lf.b,.feature .frame .lf.r{clip-path:polygon(0 0,100% 0,calc(100% - 30px) 100%,30px 100%)}
+  .feature .frame .lf.l{clip-path:polygon(30px 0,calc(100% - 30px) 0,100% 100%,0 100%)}
   .feature .frame .lf.t{top:0; left:0; right:0}
   .feature .frame .lf.b{bottom:0; left:0; right:0; transform:scaleY(-1)}
   .feature .frame .lf.l,.feature .frame .lf.r{top:0; transform-origin:0 0; width:var(--fh,600px)}
@@ -331,7 +333,7 @@
 
 <script>
 /* ===== 여기만 고치면 돼요 ===== */
-const GALLERY = ["g12.jpg","g11.jpg","g01.jpg","g02.jpg","g03.jpg","g04.jpg","g05.jpg","photos/middle.jpg","g09.jpg","g08.jpg","g18.jpg","g10.jpg","g15.jpg","g19.jpg","g16.jpg","g17.jpg","g07.jpg","g13.jpg","g14.jpg","g06.jpg"];
+const GALLERY = ["g02.jpg","g01.jpg","g11.jpg","g12.jpg","g03.jpg","g04.jpg","g05.jpg","photos/middle.jpg","g09.jpg","g08.jpg","g18.jpg","g10.jpg","g15.jpg","g19.jpg","g16.jpg","g17.jpg","g07.jpg","g13.jpg","g14.jpg","g06.jpg"];
 const WIDE = ["g14.jpg","g06.jpg"];
 const ACCOUNTS = {
   "신랑측 계좌번호": [
