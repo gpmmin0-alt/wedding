@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@400&text=0123456789&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&text=0123456789&display=swap" rel="stylesheet">
 <style>
   /* Aujournuit (Collletttivo, SIL OFL) */
   @font-face{font-family:"Aujournuit"; src:url("Aujournuit-Densed.woff2") format("woff2"); font-weight:400; font-display:swap}
@@ -25,7 +25,7 @@
   *{box-sizing:border-box}
   html{-webkit-text-size-adjust:100%}
   body{margin:0; background:var(--bg); color:var(--ink);
-    font-family:"Noto Serif Display","Gowun Batang",serif; line-height:1.95; letter-spacing:-.01em; -webkit-font-smoothing:antialiased}
+    font-family:"Libre Caslon Display","Gowun Batang",serif; line-height:1.95; letter-spacing:-.01em; -webkit-font-smoothing:antialiased}
   p{margin:0}
   .wrap{max-width:440px; margin:0 auto; overflow:hidden; position:relative;
     background-color:var(--bg);
@@ -33,10 +33,10 @@
   section{position:relative; padding:88px 30px; text-align:center}
 
   /* 타이포 */
-  .serif{font-family:"Noto Serif Display","Aujournuit","Gowun Batang",serif; font-optical-sizing:auto}
-  .ttl{margin:0; font-family:"Noto Serif Display","Aujournuit","Gowun Batang",serif; font-weight:400; font-size:17px; letter-spacing:.24em; padding-left:.24em; line-height:1.2; text-transform:uppercase}
+  .serif{font-family:"Libre Caslon Display","Aujournuit","Gowun Batang",serif; font-optical-sizing:auto}
+  .ttl{margin:0; font-family:"Libre Caslon Display","Aujournuit","Gowun Batang",serif; font-weight:400; font-size:17px; letter-spacing:.24em; padding-left:.24em; line-height:1.2; text-transform:uppercase}
   .sub{margin-top:8px; font-size:14px; letter-spacing:.3em; color:#5c5c5c}
-  .lbl{font-family:"Noto Serif Display","Aujournuit","Gowun Batang",serif; font-size:11px; letter-spacing:.18em; text-transform:uppercase}
+  .lbl{font-family:"Libre Caslon Display","Aujournuit","Gowun Batang",serif; font-size:11px; letter-spacing:.18em; text-transform:uppercase}
   .body{margin-top:34px; font-size:16px; line-height:2.15; color:var(--soft)}
 
   /* 레이스 포인트 */
@@ -69,10 +69,10 @@
   .hero-text{position:absolute; left:0; right:0; bottom:56px; z-index:4; padding:0 20px;
     animation:rise 1.8s ease both .2s; animation-play-state:paused}
   body.ready .hero-text{animation-play-state:running}
-  .hero .names{font-family:"Noto Serif Display","Aujournuit","Gowun Batang",serif; font-size:clamp(27px,8vw,35px); letter-spacing:.14em; padding-left:.14em; line-height:1.3; text-transform:uppercase; white-space:nowrap}
+  .hero .names{font-family:"Libre Caslon Display","Aujournuit","Gowun Batang",serif; font-size:clamp(27px,8vw,35px); letter-spacing:.14em; padding-left:.14em; line-height:1.3; text-transform:uppercase; white-space:nowrap}
   .hero .names i{font-style:normal; display:inline-block; margin:0 .3em; font-size:.7em; opacity:.8}
   .hero .when{display:flex; align-items:center; justify-content:center; gap:14px; margin-top:16px;
-    font-family:"Noto Serif Display","Aujournuit","Gowun Batang",serif; font-size:18px; letter-spacing:.05em}
+    font-family:"Libre Caslon Display","Aujournuit","Gowun Batang",serif; font-size:18px; letter-spacing:.05em}
   .hero .when span{width:24px; height:1px; background:rgba(247,244,238,.6)}
   .hero .where{margin-top:8px; font-size:14.5px; letter-spacing:.16em; opacity:.85}
   .hero .lace{position:absolute; left:0; right:0; bottom:-1px; z-index:3; margin:0; height:30px; background-size:auto 30px;
@@ -84,9 +84,9 @@
 
   /* ---------- INVITATION ---------- */
   .ghost{position:relative; margin-top:84px}
-  .ghost .big{position:absolute; inset:0; font-family:"Noto Serif Display","Aujournuit","Gowun Batang",serif; font-size:clamp(59px,18vw,79px); line-height:96px;
+  .ghost .big{position:absolute; inset:0; font-family:"Libre Caslon Display","Aujournuit","Gowun Batang",serif; font-size:clamp(59px,18vw,79px); line-height:96px;
     color:rgba(26,24,22,.06); white-space:nowrap}
-  .ghost .nm{position:relative; font-family:"Noto Serif Display","Aujournuit","Gowun Batang",serif; font-size:23px; letter-spacing:.2em; padding-left:.2em; text-transform:uppercase}
+  .ghost .nm{position:relative; font-family:"Libre Caslon Display","Aujournuit","Gowun Batang",serif; font-size:23px; letter-spacing:.2em; padding-left:.2em; text-transform:uppercase}
   .ghost .nm i{font-style:normal; color:var(--mute); margin:0 .35em}
   .ghost-date{margin-top:6px; font-size:14px; letter-spacing:.3em; color:#4a4a4a}
   .parents{margin-top:72px}
@@ -96,19 +96,25 @@
 
   /* ---------- FEATURE ---------- */
   .feature{padding:0 30px 88px}
-  .feature .frame{position:relative; padding:10px; border:1px solid var(--line)}
+  .feature .frame{position:relative; padding:20px}
+  .feature .frame .lf{position:absolute; height:26px; background:url(lace-ivory.webp) repeat-x center/auto 100%; pointer-events:none; z-index:2}
+  .feature .frame .lf.t{top:-3px; left:0; right:0}
+  .feature .frame .lf.b{bottom:-3px; left:0; right:0; transform:scaleY(-1)}
+  .feature .frame .lf.l,.feature .frame .lf.r{top:0; transform-origin:0 0; width:var(--fh,600px)}
+  .feature .frame .lf.l{left:0; transform:translate(23px,0) rotate(90deg)}
+  .feature .frame .lf.r{left:100%; transform:translate(3px,0) rotate(90deg)}
   .feature .ph{aspect-ratio:3/4}
-  .feature .cap2{margin-top:14px; display:flex; justify-content:space-between; font-family:"Noto Serif Display","Aujournuit","Gowun Batang",serif; font-size:11px; letter-spacing:.15em; color:var(--mute)}
+  .feature .cap2{margin-top:14px; display:flex; justify-content:space-between; font-family:"Libre Caslon Display","Aujournuit","Gowun Batang",serif; font-size:11px; letter-spacing:.15em; color:var(--mute)}
 
   /* ---------- THE DAY ---------- */
-  .stack{margin-top:46px; font-family:"Noto Serif Display","Aujournuit","Gowun Batang",serif; line-height:1}
+  .stack{margin-top:46px; font-family:"Libre Caslon Display","Aujournuit","Gowun Batang",serif; line-height:1}
   .stack .d{font-size:45px; letter-spacing:.03em}
-  .stack .w{margin-top:16px; font-family:"Noto Serif Display","Gowun Batang",serif; font-size:17px; letter-spacing:.02em; color:var(--soft)}
+  .stack .w{margin-top:16px; font-family:"Libre Caslon Display","Gowun Batang",serif; font-size:17px; letter-spacing:.02em; color:var(--soft)}
   .stack .m{font-size:23px; letter-spacing:.25em; padding-left:.25em; margin-top:10px}
   .stack .y{font-size:12px; letter-spacing:.25em; padding-left:.25em; margin-top:14px; color:var(--mute)}
   .time{margin-top:20px; font-size:14px; letter-spacing:.1em; color:var(--soft)}
   .cal{margin:42px auto 0; max-width:290px; padding:4px 0}
-  .cal table{width:100%; border-collapse:collapse; table-layout:fixed; font-family:"Noto Serif Display","Aujournuit","Gowun Batang",serif; font-size:15px}
+  .cal table{width:100%; border-collapse:collapse; table-layout:fixed; font-family:"Libre Caslon Display","Aujournuit","Gowun Batang",serif; font-size:15px}
   .cal th,.cal td{width:14.2857%; padding:0; text-align:center}
   .cal th{font-weight:400; font-size:11px; letter-spacing:.1em; color:var(--mute); padding-bottom:10px}
   .cal td{height:36px; color:var(--soft)}
@@ -117,8 +123,8 @@
   .count{display:flex; justify-content:center; margin:40px auto 0; max-width:300px; padding:14px 0}
   .count div{flex:1; position:relative}
   .count div+div::before{content:""; position:absolute; left:0; top:20%; bottom:20%; width:1px; background:var(--line)}
-  .count strong{display:block; font-family:"Noto Serif Display","Aujournuit","Gowun Batang",serif; font-weight:400; font-size:27px; line-height:1.2}
-  .count span{font-family:"Noto Serif Display","Aujournuit","Gowun Batang",serif; font-size:9.5px; letter-spacing:.15em; color:var(--mute)}
+  .count strong{display:block; font-family:"Libre Caslon Display","Aujournuit","Gowun Batang",serif; font-weight:400; font-size:27px; line-height:1.2}
+  .count span{font-family:"Libre Caslon Display","Aujournuit","Gowun Batang",serif; font-size:9.5px; letter-spacing:.15em; color:var(--mute)}
   .dday{margin-top:20px; font-size:14px; color:var(--soft)}
   .dday b{color:var(--ink)}
 
@@ -132,22 +138,22 @@
   .grid .ph.hide{display:none}
   .more{margin-top:26px}
   .btn{display:inline-block; min-width:170px; padding:13px 24px; border:1px solid var(--ink); background:var(--ink); color:var(--bg);
-    font-family:"Noto Serif Display","Aujournuit","Gowun Batang",serif; font-size:12px; letter-spacing:.15em; text-transform:uppercase; text-decoration:none; cursor:pointer}
+    font-family:"Libre Caslon Display","Aujournuit","Gowun Batang",serif; font-size:12px; letter-spacing:.15em; text-transform:uppercase; text-decoration:none; cursor:pointer}
   .btn.line{background:transparent; color:var(--ink)}
   .btn:active{opacity:.7}
   .lightbox{position:fixed; inset:0; z-index:40; background:rgba(20,19,17,.96); display:none; align-items:center; justify-content:center}
   .lightbox.on{display:flex}
   .lightbox img{max-width:100%; max-height:84vh}
-  .lightbox button{position:absolute; background:none; border:0; color:#ece7de; font-size:29px; padding:16px; cursor:pointer; font-family:"Noto Serif Display","Aujournuit","Gowun Batang",serif}
+  .lightbox button{position:absolute; background:none; border:0; color:#ece7de; font-size:29px; padding:16px; cursor:pointer; font-family:"Libre Caslon Display","Aujournuit","Gowun Batang",serif}
   .lb-close{top:6px; right:6px} .lb-prev{left:0; top:50%; transform:translateY(-50%)} .lb-next{right:0; top:50%; transform:translateY(-50%)}
-  .lb-count{position:absolute; bottom:22px; left:0; right:0; text-align:center; font-family:"Noto Serif Display","Aujournuit","Gowun Batang",serif; font-size:12px; letter-spacing:.15em; color:#8c8c8c}
+  .lb-count{position:absolute; bottom:22px; left:0; right:0; text-align:center; font-family:"Libre Caslon Display","Aujournuit","Gowun Batang",serif; font-size:12px; letter-spacing:.15em; color:#8c8c8c}
 
   /* ---------- LOCATION ---------- */
   .venue{margin-top:42px; font-size:21px; font-weight:700; letter-spacing:.04em}
   .addr{margin-top:8px; font-size:15px; color:#262626}
-  .tel{display:inline-block; margin-top:2px; font-family:"Noto Serif Display","Aujournuit","Gowun Batang",serif; font-size:14px; letter-spacing:.07em; color:var(--mute); text-decoration:none}
+  .tel{display:inline-block; margin-top:2px; font-family:"Libre Caslon Display","Aujournuit","Gowun Batang",serif; font-size:14px; letter-spacing:.07em; color:var(--mute); text-decoration:none}
   .maps{display:grid; grid-template-columns:repeat(3,1fr); gap:6px; margin-top:28px}
-  .maps .btn{min-width:0; padding:12px 0; font-family:"Noto Serif Display","Gowun Batang",serif; font-size:13px; letter-spacing:.04em}
+  .maps .btn{min-width:0; padding:12px 0; font-family:"Libre Caslon Display","Gowun Batang",serif; font-size:13px; letter-spacing:.04em}
   .info{margin-top:42px; text-align:left}
   .info .row{display:grid; grid-template-columns:66px 1fr; gap:10px; padding:12px 0; font-size:14px; line-height:1.9}
   .info .k{padding-top:4px; color:var(--mute)}
@@ -161,7 +167,7 @@
   .acc details:last-child{border-bottom:1px solid var(--line)}
   .acc summary{list-style:none; padding:18px 4px; cursor:pointer; font-size:16px; display:flex; justify-content:space-between}
   .acc summary::-webkit-details-marker{display:none}
-  .acc summary::after{content:"+"; font-family:"Noto Serif Display","Aujournuit","Gowun Batang",serif; color:var(--mute)}
+  .acc summary::after{content:"+"; font-family:"Libre Caslon Display","Aujournuit","Gowun Batang",serif; color:var(--mute)}
   .acc details[open] summary::after{content:"−"}
   .acc .row{display:flex; justify-content:space-between; align-items:center; gap:10px; padding:14px 4px; font-size:15px}
   .acc details[open]{padding-bottom:6px}
@@ -169,20 +175,20 @@
   .acc .who b{color:var(--ink); font-weight:700; margin-left:4px}
   .acc .num{margin-top:2px; font-size:15px; color:var(--soft); letter-spacing:.01em}
   .acc .row + .row{border-top:1px dashed var(--line)}
-  .acc .copy{flex:none; min-width:0; padding:8px 14px; font-family:"Noto Serif Display","Gowun Batang",serif; font-size:12px; letter-spacing:0}
+  .acc .copy{flex:none; min-width:0; padding:8px 14px; font-family:"Libre Caslon Display","Gowun Batang",serif; font-size:12px; letter-spacing:0}
 
   /* ---------- CLOSING ---------- */
   .closing{padding-top:0}
   .closing .ph{aspect-ratio:4/3; width:calc(100% + 60px); margin:0 -30px}
   .closing .ph img{filter:contrast(1.03)}
-  .closing .thanks{margin-top:56px; font-family:"Noto Serif Display","Aujournuit","Gowun Batang",serif; font-size:25px; letter-spacing:.15em; padding-left:.15em}
+  .closing .thanks{margin-top:56px; font-family:"Libre Caslon Display","Aujournuit","Gowun Batang",serif; font-size:25px; letter-spacing:.15em; padding-left:.15em}
   .closing .names2{margin-top:10px; font-size:12px; letter-spacing:.36em; color:var(--mute)}
   .share{display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:38px}
   .share .btn{min-width:0; padding:13px 0}
   footer{padding:0 0 46px; text-align:center}
   footer .lace{margin:0 0 26px}
   .gallery .lace{margin:0 -14px}
-  footer p{font-family:"Noto Serif Display","Aujournuit","Gowun Batang",serif; font-size:10.5px; letter-spacing:.21em; color:var(--mute)}
+  footer p{font-family:"Libre Caslon Display","Aujournuit","Gowun Batang",serif; font-size:10.5px; letter-spacing:.21em; color:var(--mute)}
 
   .toast{position:fixed; left:50%; bottom:40px; transform:translateX(-50%) translateY(20px); opacity:0; transition:.3s;
     background:var(--ink); color:var(--bg); padding:10px 18px; font-size:13.5px; border-radius:22px; z-index:45; pointer-events:none}
@@ -205,7 +211,7 @@
   .intro-top{position:absolute; top:11%; left:0; right:0; text-align:center; color:#f6f2ea; text-shadow:0 1px 10px rgba(40,32,24,.35); transition:opacity .6s}
   .intro-top .lbl{opacity:.85}
   .intro-top .ttl{margin-top:8px; font-size:17px}
-  .intro-hint{position:absolute; left:0; right:0; bottom:11%; text-align:center; font-family:"Noto Serif Display","Aujournuit","Gowun Batang",serif;
+  .intro-hint{position:absolute; left:0; right:0; bottom:11%; text-align:center; font-family:"Libre Caslon Display","Aujournuit","Gowun Batang",serif;
     font-size:11px; letter-spacing:.22em; color:#f6f2ea; text-shadow:0 1px 8px rgba(40,32,24,.4); animation:blink 2.4s ease-in-out infinite; transition:opacity .4s}
   @keyframes blink{50%{opacity:.35}}
   #intro.play .intro-top, #intro.play .intro-hint{animation:none; opacity:0}
@@ -251,7 +257,7 @@
   </section>
 
   <section class="feature">
-    <div class="frame fade"><div class="ph print" data-src="photos/middle.jpg" data-label="PHOTO"></div></div>
+    <div class="frame fade" id="laceFrame"><div class="ph print" data-src="photos/middle.jpg" data-label="PHOTO"></div><i class="lf t"></i><i class="lf b"></i><i class="lf l"></i><i class="lf r"></i></div>
     <div class="cap2 fade"><span>MINKI &amp; HYEMIN</span><span>2027</span></div>
   </section>
 
@@ -353,6 +359,7 @@ function loadPh(el){
   img.onerror=()=>{ if(!el.dataset.retry && !el.dataset.src.includes('/')){ el.dataset.retry=1; el.dataset.src='gallery/'+el.dataset.src; img.src=el.dataset.src; } else el.classList.add('empty'); };
   el.classList.add('empty'); img.src=el.dataset.src;
 }
+(function(){const f=document.getElementById('laceFrame'); if(!f) return; const set=()=>f.style.setProperty('--fh',f.offsetHeight+'px'); set(); if(window.ResizeObserver) new ResizeObserver(set).observe(f); addEventListener('load',set);})();
 const grid=document.getElementById('grid'), SHOW=8;
 const items=GALLERY.map((src,i)=>{ const d=document.createElement('div'); d.className='ph'+(WIDE.includes(src)?' wide':'')+(i>=SHOW?' hide':''); d.dataset.src=src; d.dataset.label=String(i+1).padStart(2,'0'); grid.appendChild(d); return d; });
 document.querySelectorAll('.ph[data-src]').forEach(loadPh);
