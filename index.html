@@ -33,10 +33,10 @@
 
   /* 타이포 */
   .serif{font-family:"Aujournuit","Gowun Batang",serif; font-optical-sizing:auto}
-  .ttl{margin:0; font-family:"Aujournuit","Gowun Batang",serif; font-weight:400; font-size:13px; letter-spacing:.24em; padding-left:.24em; line-height:1.2; text-transform:uppercase}
-  .sub{margin-top:8px; font-size:11px; letter-spacing:.3em; color:var(--mute)}
-  .lbl{font-family:"Aujournuit","Gowun Batang",serif; font-size:10px; letter-spacing:.18em; text-transform:uppercase}
-  .body{margin-top:34px; font-size:14px; line-height:2.15; color:var(--soft)}
+  .ttl{margin:0; font-family:"Aujournuit","Gowun Batang",serif; font-weight:400; font-size:15px; letter-spacing:.24em; padding-left:.24em; line-height:1.2; text-transform:uppercase}
+  .sub{margin-top:8px; font-size:12px; letter-spacing:.3em; color:#5c5c5c}
+  .lbl{font-family:"Aujournuit","Gowun Batang",serif; font-size:11px; letter-spacing:.18em; text-transform:uppercase}
+  .body{margin-top:34px; font-size:15px; line-height:2.15; color:var(--soft)}
 
   /* 레이스 포인트 */
   .lace{aspect-ratio:1400/209; margin:0 -30px; background:url(lace-ivory.webp) no-repeat center/100% 100%;
@@ -52,7 +52,7 @@
   .ph{position:relative; width:100%; overflow:hidden; background:#ddd6ca}
   .ph img{display:block; width:100%; height:100%; object-fit:cover}
   .ph.empty{display:grid; place-items:center}
-  .ph.empty::after{content:attr(data-label); font-size:11px; color:var(--mute); letter-spacing:.1em}
+  .ph.empty::after{content:attr(data-label); font-size:12px; color:var(--mute); letter-spacing:.1em}
   .print img{filter:sepia(.06) saturate(.9)}
 
   /* ---------- HERO ---------- */
@@ -64,16 +64,16 @@
   .hero-top{position:absolute; top:0; left:0; right:0; z-index:4; padding:22px; display:flex; justify-content:space-between; align-items:flex-start}
   .hero-top .lbl{line-height:2; text-align:left; opacity:.9}
   .bgm{width:30px; height:30px; border:1px solid rgba(247,244,238,.55); border-radius:50%; background:none; color:#f7f4ee;
-    display:grid; place-items:center; cursor:pointer; font-size:10px; padding:0}
+    display:grid; place-items:center; cursor:pointer; font-size:11px; padding:0}
   .hero-text{position:absolute; left:0; right:0; bottom:56px; z-index:4; padding:0 20px;
     animation:rise 1.8s ease both .2s; animation-play-state:paused}
   body.ready .hero-text{animation-play-state:running}
-  .hero .names{font-family:"Aujournuit","Gowun Batang",serif; font-size:clamp(26px,8vw,34px); letter-spacing:.14em; padding-left:.14em; line-height:1.3; text-transform:uppercase; white-space:nowrap}
+  .hero .names{font-family:"Aujournuit","Gowun Batang",serif; font-size:clamp(27px,8vw,35px); letter-spacing:.14em; padding-left:.14em; line-height:1.3; text-transform:uppercase; white-space:nowrap}
   .hero .names i{font-style:normal; display:inline-block; margin:0 .3em; font-size:.7em; opacity:.8}
   .hero .when{display:flex; align-items:center; justify-content:center; gap:14px; margin-top:16px;
-    font-family:"Aujournuit","Gowun Batang",serif; font-size:17px; letter-spacing:.05em}
+    font-family:"Aujournuit","Gowun Batang",serif; font-size:18px; letter-spacing:.05em}
   .hero .when span{width:24px; height:1px; background:rgba(247,244,238,.6)}
-  .hero .where{margin-top:6px; font-size:11.5px; letter-spacing:.16em; opacity:.85}
+  .hero .where{margin-top:6px; font-size:12.5px; letter-spacing:.16em; opacity:.85}
   .hero .lace{position:absolute; left:0; right:0; bottom:-1px; z-index:3; margin:0; height:30px; background-size:auto 30px;
     -webkit-mask-image:none; mask-image:none; filter:brightness(1.12)}
   .cue{position:absolute; bottom:34px; left:50%; z-index:4; width:1px; height:20px; background:rgba(247,244,238,.7);
@@ -83,42 +83,42 @@
 
   /* ---------- INVITATION ---------- */
   .ghost{position:relative; margin-top:84px}
-  .ghost .big{position:absolute; inset:0; font-family:"Aujournuit","Gowun Batang",serif; font-size:clamp(58px,18vw,78px); line-height:96px;
+  .ghost .big{position:absolute; inset:0; font-family:"Aujournuit","Gowun Batang",serif; font-size:clamp(59px,18vw,79px); line-height:96px;
     color:rgba(26,24,22,.06); white-space:nowrap}
-  .ghost .nm{position:relative; font-family:"Aujournuit","Gowun Batang",serif; font-size:20px; letter-spacing:.2em; padding-left:.2em; text-transform:uppercase}
+  .ghost .nm{position:relative; font-family:"Aujournuit","Gowun Batang",serif; font-size:21px; letter-spacing:.2em; padding-left:.2em; text-transform:uppercase}
   .ghost .nm i{font-style:normal; color:var(--mute); margin:0 .35em}
-  .ghost-date{margin-top:4px; font-size:11px; letter-spacing:.3em; color:var(--mute)}
+  .ghost-date{margin-top:4px; font-size:12px; letter-spacing:.3em; color:var(--mute)}
   .parents{margin-top:72px}
-  .parents p{font-size:15px; line-height:2.5}
-  .parents small{font-size:11px; color:var(--mute); margin:0 8px}
+  .parents p{font-size:16px; line-height:2.5}
+  .parents small{font-size:12px; color:var(--mute); margin:0 8px}
   .parents b{font-weight:700}
 
   /* ---------- FEATURE ---------- */
   .feature{padding:0 30px 88px}
   .feature .frame{position:relative; padding:10px; border:1px solid var(--line)}
   .feature .ph{aspect-ratio:3/4}
-  .feature .cap2{margin-top:14px; display:flex; justify-content:space-between; font-family:"Aujournuit","Gowun Batang",serif; font-size:10px; letter-spacing:.15em; color:var(--mute)}
+  .feature .cap2{margin-top:14px; display:flex; justify-content:space-between; font-family:"Aujournuit","Gowun Batang",serif; font-size:11px; letter-spacing:.15em; color:var(--mute)}
 
   /* ---------- THE DAY ---------- */
   .stack{margin-top:46px; font-family:"Aujournuit","Gowun Batang",serif; line-height:1}
-  .stack .d{font-size:44px; letter-spacing:.03em}
-  .stack .w{margin-top:16px; font-family:"Gowun Batang",serif; font-size:16px; letter-spacing:.02em; color:var(--soft)}
-  .stack .m{font-size:22px; letter-spacing:.25em; padding-left:.25em; margin-top:10px}
-  .stack .y{font-size:11px; letter-spacing:.25em; padding-left:.25em; margin-top:14px; color:var(--mute)}
-  .time{margin-top:20px; font-size:13px; letter-spacing:.1em; color:var(--soft)}
+  .stack .d{font-size:45px; letter-spacing:.03em}
+  .stack .w{margin-top:16px; font-family:"Gowun Batang",serif; font-size:17px; letter-spacing:.02em; color:var(--soft)}
+  .stack .m{font-size:23px; letter-spacing:.25em; padding-left:.25em; margin-top:10px}
+  .stack .y{font-size:12px; letter-spacing:.25em; padding-left:.25em; margin-top:14px; color:var(--mute)}
+  .time{margin-top:20px; font-size:14px; letter-spacing:.1em; color:var(--soft)}
   .cal{margin:42px auto 0; max-width:290px; padding:4px 0}
-  .cal table{width:100%; border-collapse:collapse; table-layout:fixed; font-family:"Aujournuit","Gowun Batang",serif; font-size:14px}
+  .cal table{width:100%; border-collapse:collapse; table-layout:fixed; font-family:"Aujournuit","Gowun Batang",serif; font-size:15px}
   .cal th,.cal td{width:14.2857%; padding:0; text-align:center}
-  .cal th{font-weight:400; font-size:10px; letter-spacing:.1em; color:var(--mute); padding-bottom:10px}
+  .cal th{font-weight:400; font-size:11px; letter-spacing:.1em; color:var(--mute); padding-bottom:10px}
   .cal td{height:36px; color:var(--soft)}
   .cal .sun{color:#9b9b9b}
   .cal td.day span{display:inline-grid; place-items:center; width:30px; height:30px; border-radius:50%; background:var(--ink); color:var(--bg)}
   .count{display:flex; justify-content:center; margin:40px auto 0; max-width:300px; padding:14px 0}
   .count div{flex:1; position:relative}
   .count div+div::before{content:""; position:absolute; left:0; top:20%; bottom:20%; width:1px; background:var(--line)}
-  .count strong{display:block; font-family:"Aujournuit","Gowun Batang",serif; font-weight:400; font-size:26px; line-height:1.2}
-  .count span{font-family:"Aujournuit","Gowun Batang",serif; font-size:8.5px; letter-spacing:.15em; color:var(--mute)}
-  .dday{margin-top:20px; font-size:13px; color:var(--soft)}
+  .count strong{display:block; font-family:"Aujournuit","Gowun Batang",serif; font-weight:400; font-size:27px; line-height:1.2}
+  .count span{font-family:"Aujournuit","Gowun Batang",serif; font-size:9.5px; letter-spacing:.15em; color:var(--mute)}
+  .dday{margin-top:20px; font-size:14px; color:var(--soft)}
   .dday b{color:var(--ink)}
 
   /* ---------- GALLERY ---------- */
@@ -131,26 +131,26 @@
   .grid .ph.hide{display:none}
   .more{margin-top:26px}
   .btn{display:inline-block; min-width:170px; padding:13px 24px; border:1px solid var(--ink); background:var(--ink); color:var(--bg);
-    font-family:"Aujournuit","Gowun Batang",serif; font-size:11px; letter-spacing:.15em; text-transform:uppercase; text-decoration:none; cursor:pointer}
+    font-family:"Aujournuit","Gowun Batang",serif; font-size:12px; letter-spacing:.15em; text-transform:uppercase; text-decoration:none; cursor:pointer}
   .btn.line{background:transparent; color:var(--ink)}
   .btn:active{opacity:.7}
   .lightbox{position:fixed; inset:0; z-index:40; background:rgba(20,19,17,.96); display:none; align-items:center; justify-content:center}
   .lightbox.on{display:flex}
   .lightbox img{max-width:100%; max-height:84vh}
-  .lightbox button{position:absolute; background:none; border:0; color:#ece7de; font-size:28px; padding:16px; cursor:pointer; font-family:"Aujournuit","Gowun Batang",serif}
+  .lightbox button{position:absolute; background:none; border:0; color:#ece7de; font-size:29px; padding:16px; cursor:pointer; font-family:"Aujournuit","Gowun Batang",serif}
   .lb-close{top:6px; right:6px} .lb-prev{left:0; top:50%; transform:translateY(-50%)} .lb-next{right:0; top:50%; transform:translateY(-50%)}
-  .lb-count{position:absolute; bottom:22px; left:0; right:0; text-align:center; font-family:"Aujournuit","Gowun Batang",serif; font-size:11px; letter-spacing:.15em; color:#8c8c8c}
+  .lb-count{position:absolute; bottom:22px; left:0; right:0; text-align:center; font-family:"Aujournuit","Gowun Batang",serif; font-size:12px; letter-spacing:.15em; color:#8c8c8c}
 
   /* ---------- LOCATION ---------- */
-  .venue{margin-top:42px; font-size:20px; font-weight:700; letter-spacing:.04em}
-  .addr{margin-top:6px; font-size:13px; color:var(--soft)}
-  .tel{display:inline-block; margin-top:2px; font-family:"Aujournuit","Gowun Batang",serif; font-size:13px; letter-spacing:.07em; color:var(--mute); text-decoration:none}
+  .venue{margin-top:42px; font-size:21px; font-weight:700; letter-spacing:.04em}
+  .addr{margin-top:8px; font-size:15px; color:#262626}
+  .tel{display:inline-block; margin-top:2px; font-family:"Aujournuit","Gowun Batang",serif; font-size:14px; letter-spacing:.07em; color:var(--mute); text-decoration:none}
   .maps{display:grid; grid-template-columns:repeat(3,1fr); gap:6px; margin-top:28px}
-  .maps .btn{min-width:0; padding:12px 0; font-family:"Gowun Batang",serif; font-size:12px; letter-spacing:.04em}
+  .maps .btn{min-width:0; padding:12px 0; font-family:"Gowun Batang",serif; font-size:13px; letter-spacing:.04em}
   .info{margin-top:42px; text-align:left}
-  .info .row{display:grid; grid-template-columns:66px 1fr; gap:10px; padding:12px 0; font-size:13px; line-height:1.9}
+  .info .row{display:grid; grid-template-columns:66px 1fr; gap:10px; padding:12px 0; font-size:14px; line-height:1.9}
   .info .k{padding-top:4px; color:var(--mute)}
-  .info .q{font-size:12px; color:var(--mute)}
+  .info .q{font-size:13px; color:var(--mute)}
 
   .mapart{margin:34px -16px 0; border:1px solid var(--line)}
   .mapart svg{display:block; width:100%; height:auto}
@@ -158,33 +158,33 @@
   .acc{margin-top:38px; text-align:left}
   .acc details{border-top:1px solid var(--line)}
   .acc details:last-child{border-bottom:1px solid var(--line)}
-  .acc summary{list-style:none; padding:18px 4px; cursor:pointer; font-size:14px; display:flex; justify-content:space-between}
+  .acc summary{list-style:none; padding:18px 4px; cursor:pointer; font-size:16px; display:flex; justify-content:space-between}
   .acc summary::-webkit-details-marker{display:none}
   .acc summary::after{content:"+"; font-family:"Aujournuit","Gowun Batang",serif; color:var(--mute)}
   .acc details[open] summary::after{content:"−"}
-  .acc .row{display:flex; justify-content:space-between; align-items:center; gap:10px; padding:14px 4px; font-size:13px}
+  .acc .row{display:flex; justify-content:space-between; align-items:center; gap:10px; padding:14px 4px; font-size:15px}
   .acc details[open]{padding-bottom:6px}
-  .acc .who{color:var(--mute); font-size:11.5px}
+  .acc .who{color:#5c5c5c; font-size:14px}
   .acc .who b{color:var(--ink); font-weight:700; margin-left:4px}
-  .acc .num{margin-top:2px; font-size:13px; color:var(--soft); letter-spacing:.01em}
+  .acc .num{margin-top:2px; font-size:15px; color:var(--soft); letter-spacing:.01em}
   .acc .row + .row{border-top:1px dashed var(--line)}
-  .acc .copy{flex:none; min-width:0; padding:8px 14px; font-family:"Gowun Batang",serif; font-size:11px; letter-spacing:0}
+  .acc .copy{flex:none; min-width:0; padding:8px 14px; font-family:"Gowun Batang",serif; font-size:12px; letter-spacing:0}
 
   /* ---------- CLOSING ---------- */
   .closing{padding-top:0}
   .closing .ph{aspect-ratio:4/3; width:calc(100% + 60px); margin:0 -30px}
   .closing .ph img{filter:contrast(1.03)}
-  .closing .thanks{margin-top:56px; font-family:"Aujournuit","Gowun Batang",serif; font-size:24px; letter-spacing:.15em; padding-left:.15em}
-  .closing .names2{margin-top:10px; font-size:11px; letter-spacing:.36em; color:var(--mute)}
+  .closing .thanks{margin-top:56px; font-family:"Aujournuit","Gowun Batang",serif; font-size:25px; letter-spacing:.15em; padding-left:.15em}
+  .closing .names2{margin-top:10px; font-size:12px; letter-spacing:.36em; color:var(--mute)}
   .share{display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:38px}
   .share .btn{min-width:0; padding:13px 0}
   footer{padding:0 0 46px; text-align:center}
   footer .lace{margin:0 0 26px}
   .gallery .lace{margin:0 -14px}
-  footer p{font-family:"Aujournuit","Gowun Batang",serif; font-size:9.5px; letter-spacing:.21em; color:var(--mute)}
+  footer p{font-family:"Aujournuit","Gowun Batang",serif; font-size:10.5px; letter-spacing:.21em; color:var(--mute)}
 
   .toast{position:fixed; left:50%; bottom:40px; transform:translateX(-50%) translateY(20px); opacity:0; transition:.3s;
-    background:var(--ink); color:var(--bg); padding:10px 18px; font-size:12.5px; border-radius:22px; z-index:45; pointer-events:none}
+    background:var(--ink); color:var(--bg); padding:10px 18px; font-size:13.5px; border-radius:22px; z-index:45; pointer-events:none}
   .toast.on{opacity:1; transform:translateX(-50%)}
 
   .fade{opacity:0; transform:translateY(20px); transition:opacity 1.1s ease, transform 1.1s ease}
@@ -203,9 +203,9 @@
   #intro.zoom .veil{opacity:1}
   .intro-top{position:absolute; top:11%; left:0; right:0; text-align:center; color:#f6f2ea; text-shadow:0 1px 10px rgba(40,32,24,.35); transition:opacity .6s}
   .intro-top .lbl{opacity:.85}
-  .intro-top .ttl{margin-top:8px; font-size:16px}
+  .intro-top .ttl{margin-top:8px; font-size:17px}
   .intro-hint{position:absolute; left:0; right:0; bottom:11%; text-align:center; font-family:"Aujournuit","Gowun Batang",serif;
-    font-size:10px; letter-spacing:.22em; color:#f6f2ea; text-shadow:0 1px 8px rgba(40,32,24,.4); animation:blink 2.4s ease-in-out infinite; transition:opacity .4s}
+    font-size:11px; letter-spacing:.22em; color:#f6f2ea; text-shadow:0 1px 8px rgba(40,32,24,.4); animation:blink 2.4s ease-in-out infinite; transition:opacity .4s}
   @keyframes blink{50%{opacity:.35}}
   #intro.play .intro-top, #intro.play .intro-hint{animation:none; opacity:0}
   @media (prefers-reduced-motion:reduce){ #intro video,#intro .veil{transition:none!important} .intro-hint{animation:none} }
@@ -277,7 +277,7 @@
     <h2 class="ttl fade lt">Location</h2>
     <p class="sub fade">오시는 길</p>
     <p class="venue fade">스타시티아트홀</p>
-    <p class="addr fade">서울 광진구 능동로 110, 5층</p>
+    <p class="addr fade">서울 광진구 능동로 110 스타시티 영존 5층</p>
     <a class="tel fade" href="tel:024308000">02 · 430 · 8000</a>
     <div class="maps fade">
       <a class="btn" target="_blank" rel="noopener" href="https://map.naver.com/p/search/%EC%8A%A4%ED%83%80%EC%8B%9C%ED%8B%B0%EC%95%84%ED%8A%B8%ED%99%80">네이버 지도</a>
@@ -395,7 +395,7 @@ tick(); setInterval(tick,1000);
   const box=document.getElementById('acc'); let any=false;
   for(const [title,list] of Object.entries(ACCOUNTS)){
     if(!list.length) continue; any=true;
-    const det=document.createElement('details');
+    const det=document.createElement('details'); det.open=true;
     det.innerHTML=`<summary>${title}</summary>`+list.map(a=>`<div class="row"><div><div class="who">${a.who} <b>${a.name}</b></div><div class="num">${a.bank} ${a.num}</div></div><button class="btn copy" data-v="${a.bank} ${a.num} ${a.name}">복사</button></div>`).join('');
     box.appendChild(det);
   }
