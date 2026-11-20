@@ -96,13 +96,14 @@
 
   /* ---------- FEATURE ---------- */
   .feature{padding:0 30px 88px}
-  .feature .frame{position:relative; padding:20px}
-  .feature .frame .lf{position:absolute; height:26px; background:url(lace-ivory.webp) repeat-x center/auto 100%; pointer-events:none; z-index:2}
-  .feature .frame .lf.t{top:-3px; left:0; right:0}
-  .feature .frame .lf.b{bottom:-3px; left:0; right:0; transform:scaleY(-1)}
+  .feature .frame{position:relative; padding:16px}
+  .feature .frame .ph{z-index:3}
+  .feature .frame .lf{position:absolute; height:30px; background:url(lace-ivory.webp) repeat-x center/auto 100%; pointer-events:none; z-index:1}
+  .feature .frame .lf.t{top:0; left:0; right:0}
+  .feature .frame .lf.b{bottom:0; left:0; right:0; transform:scaleY(-1)}
   .feature .frame .lf.l,.feature .frame .lf.r{top:0; transform-origin:0 0; width:var(--fh,600px)}
-  .feature .frame .lf.l{left:0; transform:translate(23px,0) rotate(90deg)}
-  .feature .frame .lf.r{left:100%; transform:translate(3px,0) rotate(90deg)}
+  .feature .frame .lf.l{left:0; transform:translate(30px,0) rotate(90deg)}
+  .feature .frame .lf.r{left:100%; transform:rotate(90deg)}
   .feature .ph{aspect-ratio:3/4}
   .feature .cap2{margin-top:14px; display:flex; justify-content:space-between; font-family:"Libre Caslon Display","Aujournuit","Gowun Batang",serif; font-size:11px; letter-spacing:.15em; color:var(--mute)}
 
